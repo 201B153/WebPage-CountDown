@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>frontend</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/icons8-falcon-16.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="counter.css" />
+
+    <style>
+      body {
+        background: hsl(0, 3%, 93%);
+        /* overflow: hidden; */
+        overflow: visible;
+      }
+
+      .webgl {
+        position: absolute;
+        top: 0;
+        left: 0;
+        outline: none;
+        
+        mix-blend-mode: exclusion;
+        z-index: -9999;
+      }
+
+      .text-theme {
+        color: rgb(99, 66, 20);
+      }
+
+      .bg-theme-light {
+        background-color: rgb(146, 238, 192);
+      }
+
+      .ng-theme-dark {
+        background-color: rgb(6, 15, 11) !important;
+      }
+
+      .navbar-light {
+        color: rgb(245, 146, 9);
+      }
+      .navbar-light .nav-item .nav-link {
+        color: rgb(252, 151, 9);
+      }
+      .navbar {
+        height: 60px;
+      }
+      .gradient-theme {
+        background: -webkit-linear-gradient(
+          310deg,
+          rgb(233, 187, 122),
+          rgb(236, 176, 92)
+        );
+        background: linear-gradient(310deg,
+         rgb(228, 183, 120), 
+        rgb(245, 147, 9));
+      }
+      .form-outline {
+        box-shadow: 0.1rem;
+        background-color: transparent;
+        border-radius: 5%;
+        border: rgb(39, 228, 14);
+      }
+      .form-control {
+        color: blue;
+      }
+      .form-label {
+        color: aquamarine;
+      }
+
+/* timer styling */
+      .container {
+        color: #333;
+        margin: 0 auto;
+        text-align: center;
+      }
+      h1 {
+        font-weight: normal;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+      }
+      li {
+        display: inline-block;
+        font-size: 1.5em;
+        list-style-type: none;
+        padding: 1em;
+        text-transform: uppercase;
+      }
+      li span {
+        display: block;
+        font-size: 4.5rem;
+      }
+      .emoji {
+        display: none;
+        padding: 1rem;
+      }
+      .emoji span {
+        font-size: 4rem;
+        padding: 0 0.5rem;
+      }
+      @media all and (max-width: 768px) {
+        h1 {
+          font-size: calc(1.5rem * var(--smaller));
+        }
+
+        li {
+          font-size: calc(1.125rem * var(--smaller));
+        }
+
+        li span {
+          font-size: calc(3.375rem * var(--smaller));
+        }
+      }
+/* timer styling_END */
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="#">
+      <img
+        src="/img/icons8-falcon-16.png"
+        height="16"
+        alt="MDB Logo"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+      <div class="d-flex align-items-center">
+        <button type="button" 
+        class="btn btn-outline-success btn-lg px-5 py-2.6"
+        data-mdb-ripple-color="dark">
+          Login
+        </button>&nbsp
+        <button type="button" 
+        class="btn btn-outline-info btn-lg px-5 py-2.6"
+        data-mdb-ripple-color="dark">
+          Sign Up
+        </button>&nbsp
+        &nbsp &nbsp
+        <a
+          class="btn btn-dark px-3 py-3"
+          data-mdb-ripple-unbound="true" 
+          data-mdb-ripple-color="dark"
+          href="https://github.com"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+    </header>
+
+    <main>
+      <div class="container">
+        <section>
+          <div class="vh-100 d-flex align-items-center justify-content-center">
+            <form class="text-center">
+
+              <div class="container">
+                <h1 id="headline">Countdown to Launch</h1>
+                <div id="countdown">
+                  <ul>
+                    <li><span id="days"></span>days</li>
+                    <li><span id="hours"></span>Hours</li>
+                    <li><span id="minutes"></span>Minutes</li>
+                    <li><span id="seconds"></span>Seconds</li>
+                  </ul>
+                </div>
+                <div id="content" class="emoji">
+                  <span>WE</span>
+                  <span>WILL</span>
+                  <span>MEET SOON</span>
+                </div>
+              </div>
+
+              <h1 class="display-1 text-uppercase fw-bold text-theme mb-4">
+                COMING SOON........
+              </h1>
+              <div class="form-outline">
+                <input type="email" id="typeEmail" class="form-control" />
+                <label class="form-label" for="typeEmail">Email input</label>
+              </div>
+              <a
+                href="#section-content"
+                role="button"
+                class="btn btn-outline-success btn-lg px-5 py-3"
+                data-mdb-ripple-color="dark"
+                >Notify Me</a
+              >
+              <a
+                href="#section-content"
+                type="button" class="btn btn-outline-info btn-lg px-5 py-3" 
+                data-mdb-ripple-color="dark">
+                Contact US</a>
+            </div>
+          </div>
+          <div class="section-content">
+            <!-- Here Login OR Signup Page will we created -->
+          </div>
+
+          <canvas class="webgl"></canvas>
+        </section>
+
+        <!-- Landing Pages -->
+      </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-dark" href="https://test.com/">test.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    
+    <canvas class="webgl"></canvas>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"
+    ></script>
+
+    <!-- Three.js core -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+    ></script>
+    <!-- Three.js setup -->
+    <script type="text/javascript">
+      // Texture
+      const textureLoader = new THREE.TextureLoader();
+      const normalTexture = textureLoader.load("/img/map.png");
+
+      // Canvas
+      const canvas = document.querySelector("canvas.webgl");
+
+      // Scene
+      const scene = new THREE.Scene();
+
+      // Objects
+      const geometry = new THREE.SphereBufferGeometry(1.1, 19, 22);
+
+      // Materials
+      const material = new THREE.MeshStandardMaterial();
+      material.normalMap = normalTexture;
+
+      // Mesh
+      const shape = new THREE.Mesh(geometry, material);
+      scene.add(shape);
+
+      // Lights
+      const pointLight = new THREE.PointLight(0x11223c, 1);
+      pointLight.position.x = 2;
+      pointLight.position.y = 3;
+      pointLight.position.z = 4;
+      scene.add(pointLight);
+
+      /**
+       * Sizes
+       */
+      const sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+
+      window.addEventListener("resize", () => {
+        // Update sizes
+        sizes.width = window.innerWidth;
+        sizes.height = window.innerHeight;
+
+        // Update camera
+        camera.aspect = sizes.width / sizes.height;
+        camera.updateProjectionMatrix();
+
+        // Update renderer
+        renderer.setSize(sizes.width, sizes.height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      });
+
+      /**
+       * Camera
+       */
+      // Base camera
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        sizes.width / sizes.height,
+        0.1,
+        100
+      );
+      camera.position.x = 0;
+      camera.position.y = 0;
+      camera.position.z = 2;
+      scene.add(camera);
+
+      /**
+       * Renderer
+       */
+      const renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+      });
+      renderer.setSize(sizes.width, sizes.height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      /**
+       * Animate
+       */
+
+      document.addEventListener("mousemove", onDocumentmousemove);
+
+      let mouseX = 0;
+      let mouseY = 0;
+
+      let targetX = 0;
+      let targetY = 0;
+
+      const windowX = window.innerWidth / 2;
+      const windowY = window.innerHeight / 2;
+
+      function onDocumentmousemove(event) {
+        mouseX = event.clientX - windowX;
+        mouseY = event.clientY - windowY;
+      }
+
+      const updateShape = (event) => {
+        shape.position.y = window.scrollY * 0.001;
+      };
+
+      window.addEventListener("scroll", updateShape);
+
+      const clock = new THREE.Clock();
+
+      const tick = () => {
+        targetX = mouseX * 0.001;
+        targetY = mouseY * 0.001;
+
+        const elapsedTime = clock.getElapsedTime();
+
+        // Update objects
+
+        shape.rotation.y = 0.5 * elapsedTime;
+
+        shape.rotation.y += 0.5 * (targetX - shape.rotation.y);
+        shape.rotation.x += 0.5 * (targetY - shape.rotation.x);
+
+        // Update Orbital Controls
+        // controls.update()
+
+        // Render
+        renderer.render(scene, camera);
+
+        // Call tick again on the next frame
+        window.requestAnimationFrame(tick);
+      };
+
+      tick();
+      (function () {
+        const second = 1000,
+          minute = second * 60,
+          hour = minute * 60,
+          day = hour * 24;
+
+        let today = new Date(),
+          dd = String(today.getDate()).padStart(2, "0"),
+          mm = String(today.getMonth() + 1).padStart(2, "0"),
+          yyyy = today.getFullYear(),
+          nextYear = yyyy + 1,
+          dayMonth = "01/01/",
+          launch = dayMonth + yyyy;
+
+        today = mm + "/" + dd + "/" + yyyy;
+        if (today > launch) {
+          launch = dayMonth + nextYear;
+        }
+        //end
+
+        const countDown = new Date(launch).getTime(),
+          x = setInterval(function () {
+            const now = new Date().getTime(),
+              distance = countDown - now;
+
+            (document.getElementById("days").innerText = Math.floor(
+              distance / day
+            )),
+              (document.getElementById("hours").innerText = Math.floor(
+                (distance % day) / hour
+              )),
+              (document.getElementById("minutes").innerText = Math.floor(
+                (distance % hour) / minute
+              )),
+              (document.getElementById("seconds").innerText = Math.floor(
+                (distance % minute) / second
+              ));
+
+            //do something later when date is reached
+            if (distance < 0) {
+              document.getElementById("headline").innerText = "It's launch!";
+              document.getElementById("countdown").style.display = "none";
+              document.getElementById("content").style.display = "block";
+              clearInterval(x);
+            }
+            //seconds
+          }, 0);
+      })();
+    </script>
+  </body>
+</html>
