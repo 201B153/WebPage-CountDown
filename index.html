@@ -7,217 +7,154 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>frontend</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="img/icons8-falcon-16.png" type="image/x-icon" />
-    <!-- Font Awesome -->
+    <title>CountDown</title>
+    <!-- FavIcon -->
+    <link rel="icon" href="img/favicon.svg" type="image/x-icon" />
+    <!-- Fonts -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
     />
-    <!-- Google Fonts Roboto -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
     />
-    <!-- MDB -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="counter.css" />
-
-    <style>
-      body {
-        background: hsl(0, 3%, 93%);
-        /* overflow: hidden; */
-        overflow: visible;
-      }
-
-      .webgl {
-        position: absolute;
-        top: 0;
-        left: 0;
-        outline: none;
-        
-        mix-blend-mode: exclusion;
-        z-index: -9999;
-      }
-
-      .text-theme {
-        color: rgb(99, 66, 20);
-      }
-
-      .bg-theme-light {
-        background-color: rgb(146, 238, 192);
-      }
-
-      .ng-theme-dark {
-        background-color: rgb(6, 15, 11) !important;
-      }
-
-      .navbar-light {
-        color: rgb(245, 146, 9);
-      }
-      .navbar-light .nav-item .nav-link {
-        color: rgb(252, 151, 9);
-      }
-      .navbar {
-        height: 60px;
-      }
-      .gradient-theme {
-        background: -webkit-linear-gradient(
-          310deg,
-          rgb(233, 187, 122),
-          rgb(236, 176, 92)
-        );
-        background: linear-gradient(310deg,
-         rgb(228, 183, 120), 
-        rgb(245, 147, 9));
-      }
-      .form-outline {
-        box-shadow: 0.1rem;
-        background-color: transparent;
-        border-radius: 5%;
-        border: rgb(39, 228, 14);
-      }
-      .form-control {
-        color: blue;
-      }
-      .form-label {
-        color: aquamarine;
-      }
-
-/* timer styling */
-      .container {
-        color: #333;
-        margin: 0 auto;
-        text-align: center;
-      }
-      h1 {
-        font-weight: normal;
-        letter-spacing: 0.125rem;
-        text-transform: uppercase;
-      }
-      li {
-        display: inline-block;
-        font-size: 1.5em;
-        list-style-type: none;
-        padding: 1em;
-        text-transform: uppercase;
-      }
-      li span {
-        display: block;
-        font-size: 4.5rem;
-      }
-      .emoji {
-        display: none;
-        padding: 1rem;
-      }
-      .emoji span {
-        font-size: 4rem;
-        padding: 0 0.5rem;
-      }
-      @media all and (max-width: 768px) {
-        h1 {
-          font-size: calc(1.5rem * var(--smaller));
-        }
-
-        li {
-          font-size: calc(1.125rem * var(--smaller));
-        }
-
-        li span {
-          font-size: calc(3.375rem * var(--smaller));
-        }
-      }
-/* timer styling_END */
-    </style>
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/tiny-slider.css" />
+    <link rel="stylesheet" href="css/glightbox.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
 
   <body>
-    <header>
-      <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
-  <div class="container">
-    <!-- Navbar brand -->
-    <a class="navbar-brand me-2" href="#">
-      <img
-        src="img/icons8-falcon-16.png"
-        height="16"
-        alt="Logo"
-        loading="lazy"
-        style="margin-top: -1px;"
-      />
-    </a>
-
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarButtonsExample"
-      aria-controls="navbarButtonsExample"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarButtonsExample">
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
-        </li>
-      </ul>
-      <!-- Left links -->
-
-      <div class="d-flex align-items-center">
-        <button type="button" 
-        class="btn btn-outline-success btn-lg px-5 py-2.6"
-        data-mdb-ripple-color="dark">
-          Login
-        </button>&nbsp
-        <button type="button" 
-        class="btn btn-outline-info btn-lg px-5 py-2.6"
-        data-mdb-ripple-color="dark">
-          Sign Up
-        </button>&nbsp
-        &nbsp &nbsp
-        <a
-          class="btn btn-dark px-3 py-3"
-          data-mdb-ripple-unbound="true" 
-          data-mdb-ripple-color="dark"
-          href="https://github.com"
-          role="button"
-          ><i class="fab fa-github"></i
-        ></a>
+    <!-- Preloader Here -->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-icon">
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
-    <!-- Collapsible wrapper -->
-  </div>
-  <!-- Container wrapper -->
-</nav>
-<!-- Navbar -->
+    <!-- Preloader Ends Here -->
+    <header class="header navbar-area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <div class="nav-inner">
+              <!-- Start Navbar -->
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                  <img src="img/logo.jpeg" alt="Logo" />
+                </a>
+                <button
+                  class="navbar-toggler mobile-menu-btn"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+                <div
+                  class="collapse navbar-collapse sub-menu-bar"
+                  id="navbarSupportedContent"
+                >
+                  <ul id="nav" class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a
+                        href="#"
+                        class="page-scroll active"
+                        aria-label="Toggle navigation"
+                        >Login</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        href="https://201b153.github.io/RY_WebPage/"
+                        class="page-scroll active"
+                        aria-label="Toggle navigation"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        href="#"
+                        class="page-scroll active"
+                        aria-label="Toggle navigation"
+                        >Sign Up</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="dd-menu collapsed"
+                        href="javascript:void(0)"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#submenu-1-4"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >About Us</a
+                      >
+                      <ul class="sub-menu collapse" id="submenu-1-4">
+                        <li class="nav-item">
+                          <a href="javascript:void(0)">Support</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="javascript:void(0)">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="javascript:void(0)">Join Us</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <!-- navbar collapse -->
+                <div class="button add-list-button">
+                  <a
+                    href="javascript:void(0)"
+                    class="btn"
+                    data-mdb-ripple-color="dark"
+                    >Contact Me</a
+                  >
+                </div>
+              </nav>
+              <!-- End Navbar -->
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
     </header>
-
+    <!-- Header Ends Here -->
     <main>
       <div class="container">
         <section>
           <div class="vh-100 d-flex align-items-center justify-content-center">
             <form class="text-center">
-
               <div class="container">
-                <h1 id="headline">Countdown to Launch</h1>
+                <h1 id="headline">Count To Go</h1>
                 <div id="countdown">
-                  <ul>
-                    <li><span id="days"></span>days</li>
-                    <li><span id="hours"></span>Hours</li>
-                    <li><span id="minutes"></span>Minutes</li>
-                    <li><span id="seconds"></span>Seconds</li>
+                  <!-- to add image place style="background-image: url('img/space_bg.jpg')" after class or id -->
+                  <ul class="timer">
+                    <li class="timer-day"><span id="days"></span>DYS</li>
+                    <li class="timer-Hours"><span id="hours"></span>HRS</li>
+                    <li class="timer-minutes">
+                      <span id="minutes"></span>MIN
+                    </li>
+                    <li class="timer-seconds">
+                      <span id="seconds"></span>SEC
+                    </li>
                   </ul>
                 </div>
                 <div id="content" class="emoji">
@@ -226,61 +163,170 @@
                   <span>MEET SOON</span>
                 </div>
               </div>
-
               <h1 class="display-1 text-uppercase fw-bold text-theme mb-4">
-                COMING SOON........
+                What Are you wait for??
               </h1>
               <div class="form-outline">
                 <input type="email" id="typeEmail" class="form-control" />
                 <label class="form-label" for="typeEmail">Email input</label>
               </div>
               <a
-                href="#section-content"
+                href="mailto:tomarm698@gmail.com"
                 role="button"
                 class="btn btn-outline-success btn-lg px-5 py-3"
                 data-mdb-ripple-color="dark"
-                >Notify Me</a
+                >Mail Me</a
               >
               <a
-                href="#section-content"
-                type="button" class="btn btn-outline-info btn-lg px-5 py-3" 
-                data-mdb-ripple-color="dark">
-                Contact US</a>
-            </div>
+                href="https://github.com/201B153"
+                type="button"
+                class="btn btn-outline-info btn-lg px-5 py-3"
+                data-mdb-ripple-color="dark"
+              >
+                About Me</a
+              >
+            </form>
           </div>
-          <div class="section-content">
-            <!-- Here Login OR Signup Page will we created -->
-          </div>
-
           <canvas class="webgl"></canvas>
         </section>
-
-        <!-- Landing Pages -->
       </div>
     </main>
-
-    <footer class="bg-light text-center text-lg-start">
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-dark" href="https://test.com/">test.com</a>
+    <footer class="footer">
+      <!-- Start Footer Top -->
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-12">
+              <!-- Single Widget -->
+              <div class="single-footer f-about">
+                <div class="logo">
+                  <a href="index.html">
+                    <img src="img/favicon.svg" alt="#" />
+                  </a>
+                </div>
+                <p>201b153</p>
+                <ul class="social">
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-facebook-filled"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-twitter-original"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-instagram"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-linkedin-original"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-youtube"></i
+                    ></a>
+                  </li>
+                </ul>
+                <p class="copyright-text">
+                  Designed and Developed by
+                  <a href="#" rel="nofollow" target="_blank">201b153</a>
+                </p>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+            <div class="col-lg-8 col-md-8 col-12">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Single Widget -->
+                  <div class="single-footer f-link">
+                    <h3>
+                      <a
+                        href="#"
+                        type="button"
+                        class="btn btn-outline-success btn-lg px-5 py-3"
+                        data-mdb-ripple-color="dark"
+                      >
+                        Solutions</a
+                      >
+                    </h3>
+                  </div>
+                  <!-- End Single Widget -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Single Widget -->
+                  <div class="single-footer f-link">
+                    <h3>
+                      <a
+                        href="#"
+                        type="button"
+                        class="btn btn-outline-success btn-lg px-5 py-3"
+                        data-mdb-ripple-color="dark"
+                      >
+                        Company</a
+                      >
+                    </h3>
+                  </div>
+                  <!-- End Single Widget -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Single Widget -->
+                  <div class="single-footer f-link">
+                    <h3>
+                      <a
+                        href="#"
+                        type="button"
+                        class="btn btn-outline-success btn-lg px-5 py-3"
+                        data-mdb-ripple-color="dark"
+                      >
+                        Support</a
+                      >
+                    </h3>
+                  </div>
+                  <!-- End Single Widget -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Single Widget -->
+                  <div class="single-footer f-link">
+                    <h3>
+                      <a
+                        href="#"
+                        type="button"
+                        class="btn btn-outline-success btn-lg px-5 py-3"
+                        data-mdb-ripple-color="dark"
+                      >
+                        Legal</a
+                      >
+                    </h3>
+                  </div>
+                  <!-- End Single Widget -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- Copyright -->
+      <!--/ End Footer Top -->
     </footer>
-    
-    <canvas class="webgl"></canvas>
-
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"
-    ></script>
-
+    <!--/ End Footer Area -->
+    <!-- Bridge Icon Start -->
+    <a href="#" class="scroll-top" data-mdb-ripple-color="dark">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- Bridge Icon Start -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mdb.min.js"></script>
     <!-- Three.js core -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
-    ></script>
-    <!-- Three.js setup -->
+    <script src="js/three.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/glightbox.min.js"></script>
+    <script src="js/count-up.min.js"></script>
+    <script src="js/main.js"></script>
     <script type="text/javascript">
       // Texture
       const textureLoader = new THREE.TextureLoader();
@@ -293,7 +339,7 @@
       const scene = new THREE.Scene();
 
       // Objects
-      const geometry = new THREE.SphereBufferGeometry(1.1, 19, 22);
+      const geometry = new THREE.SphereBufferGeometry(1.0, 19, 22);
 
       // Materials
       const material = new THREE.MeshStandardMaterial();
